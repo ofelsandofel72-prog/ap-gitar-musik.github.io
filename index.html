@@ -3,77 +3,112 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AP Gitar Musik | Toko Gitar Profesional</title>
-<meta name="description" content="AP Gitar Musik adalah toko gitar dan alat musik terpercaya. Produk original, harga jujur, pengiriman aman.">
+<title>AP Gitar Musik | Toko Gitar & Alat Musik Profesional</title>
+<meta name="description" content="AP Gitar Musik adalah toko gitar dan alat musik profesional. Menyediakan gitar akustik, elektrik, bass, dan aksesoris berkualitas dengan pelayanan jujur dan terpercaya.">
 
 <style>
 :root{
-  --dark:#0f0f0f;
+  --dark:#0a0a0a;
   --accent:#25d366;
   --bg:#f4f6fb;
   --card:#ffffff;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;font-family:'Segoe UI',Arial,sans-serif;
-  background:var(--bg);color:#333;line-height:1.6
+  background:var(--bg);color:#333;line-height:1.9
 }
+img{max-width:100%;border-radius:18px}
 a{text-decoration:none;color:inherit}
+
+/* NAV */
 nav{
-  background:var(--dark);
-  padding:14px 20px;
-  display:flex;justify-content:center;gap:18px;
-  position:sticky;top:0;z-index:99
+  background:rgba(0,0,0,.9);
+  padding:16px 22px;
+  display:flex;justify-content:center;gap:22px;
+  position:sticky;top:0;z-index:999;
+  backdrop-filter:blur(8px)
 }
 nav a{color:#fff;font-weight:600}
 nav a:hover{color:var(--accent)}
+
+/* HERO */
 header{
-  background:linear-gradient(120deg,#000,#222);
-  color:#fff;padding:90px 20px;text-align:center
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+  url('https://images.unsplash.com/photo-1511379938547-c1f69419868d');
+  background-size:cover;background-position:center;
+  color:#fff;padding:140px 20px;text-align:center
 }
-header h1{font-size:44px;margin:0}
-header p{opacity:.9;font-size:18px}
+header h1{font-size:54px;margin:0}
+header p{
+  font-size:21px;max-width:900px;
+  margin:30px auto;opacity:.95
+}
+
+/* BUTTON */
 .btn{
-  display:inline-block;margin-top:25px;
+  display:inline-block;
   background:var(--accent);color:#fff;
-  padding:14px 30px;border-radius:30px;
-  font-weight:bold
+  padding:18px 42px;border-radius:50px;
+  font-weight:bold;font-size:18px
 }
+
+/* SECTION */
 section{
   max-width:1200px;margin:auto;
-  padding:80px 20px
+  padding:110px 20px
 }
-h2{text-align:center;font-size:34px;margin-bottom:50px}
+h2{text-align:center;font-size:40px;margin-bottom:70px}
+
+/* GRID & CARD */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px
 }
 .card{
   background:var(--card);
-  padding:25px;border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08)
+  padding:34px;border-radius:26px;
+  box-shadow:0 18px 50px rgba(0,0,0,.1);
+  opacity:0;transform:translateY(50px);
+  transition:1s
 }
-.price{color:var(--accent);font-weight:bold}
-.search input{
-  width:100%;max-width:420px;
-  padding:14px 20px;
-  border-radius:30px;border:1px solid #ccc
-}
-details{
-  background:#fff;padding:20px;
-  border-radius:14px;margin-bottom:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,.08)
-}
+.card.show{opacity:1;transform:none}
+
+.price{color:var(--accent);font-weight:bold;font-size:20px}
+
+/* FOOTER */
 footer{
-  background:#111;color:#aaa;
-  text-align:center;padding:30px
+  background:#0a0a0a;color:#aaa;
+  text-align:center;padding:45px
 }
+
+/* WA FLOAT */
 .wa{
-  position:fixed;right:20px;bottom:20px;
-  background:var(--accent);
-  color:#fff;padding:16px;
-  border-radius:50%;font-weight:bold
+  position:fixed;right:22px;bottom:22px;
+  background:var(--accent);color:#fff;
+  padding:20px;border-radius:50%;
+  font-weight:bold;font-size:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,.35)
+}
+
+/* POPUP */
+#popup{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;align-items:center;justify-content:center;
+  z-index:2000
+}
+#popup .box{
+  background:#fff;max-width:520px;
+  padding:34px;border-radius:24px;
+  text-align:center
+}
+.close{
+  cursor:pointer;color:red;
+  font-weight:bold;float:right
 }
 </style>
 </head>
@@ -82,74 +117,110 @@ footer{
 
 <nav>
 <a href="#home">Home</a>
-<a href="#profil">Profil</a>
+<a href="#profil">Tentang</a>
 <a href="#produk">Produk</a>
-<a href="#artikel">Artikel</a>
+<a href="#galeri">Galeri</a>
+<a href="#edukasi">Edukasi</a>
 <a href="#testimoni">Testimoni</a>
-<a href="#faq">FAQ</a>
 <a href="#kontak">Kontak</a>
 </nav>
 
 <header id="home">
 <h1>AP Gitar Musik</h1>
-<p>Toko Gitar & Alat Musik Profesional</p>
-<a href="#produk" class="btn">Lihat Produk</a>
+<p>
+AP Gitar Musik bukan hanya menjual alat musik,  
+kami membantu kamu menemukan instrumen yang benar-benar cocok
+dengan karakter, kebutuhan, dan perjalanan musikalmu.
+Dari pemula sampai profesional, kami layani dengan sepenuh hati.
+</p>
+<a href="#produk" class="btn">Jelajahi Produk</a>
 </header>
 
-<section>
-<h2>Pencarian</h2>
-<center>
-<div class="search">
-<input type="search" placeholder="Cari gitar, bass, aksesoris...">
-</div>
-</center>
-</section>
-
 <section id="profil">
-<h2>Profil Perusahaan</h2>
+<h2>Kenapa AP Gitar Musik?</h2>
+<div class="grid">
 <div class="card">
-<p><strong>AP Gitar Musik</strong> menyediakan gitar dan alat musik berkualitas untuk pemula hingga profesional.</p>
-<p><strong>Visi:</strong> Menjadi toko gitar terpercaya di Indonesia.</p>
-<p><strong>Misi:</strong> Produk original • Harga jujur • Pelayanan cepat</p>
+<p>
+Kami percaya bahwa alat musik bukan sekadar barang,
+melainkan teman jangka panjang dalam berkarya.
+Karena itu setiap gitar yang kami jual
+melewati proses seleksi dan pengecekan yang ketat.
+</p>
+<p>
+Kami mengutamakan kejujuran, edukasi, dan kenyamanan pembeli.
+Bagi kami, kepuasan pelanggan jauh lebih penting daripada sekadar transaksi.
+</p>
+</div>
+<img class="card" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1">
 </div>
 </section>
 
 <section id="produk">
-<h2>Produk Unggulan</h2>
+<h2>Produk Unggulan Kami</h2>
 <div class="grid">
-<div class="card">
+
+<div class="card" onclick="openPopup(
+'Gitar Akustik',
+'https://images.unsplash.com/photo-1510915361894-db8b60106cb1',
+'Gitar akustik dengan karakter suara hangat, nyaman dimainkan, dan cocok untuk pemula hingga musisi profesional.'
+)">
+<img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1">
 <h3>Gitar Akustik</h3>
 <p class="price">Mulai Rp 500.000</p>
-<p>Suara hangat & nyaman dimainkan</p>
+<p>Klik untuk detail produk</p>
 </div>
-<div class="card">
+
+<div class="card" onclick="openPopup(
+'Gitar Elektrik',
+'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a',
+'Gitar elektrik dengan karakter suara tajam dan fleksibel, cocok untuk rock, blues, jazz, dan genre modern.'
+)">
+<img src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a">
 <h3>Gitar Elektrik</h3>
 <p class="price">Mulai Rp 1.200.000</p>
-<p>Rock • Blues • Jazz</p>
+<p>Klik untuk detail produk</p>
 </div>
-<div class="card">
-<h3>Bass</h3>
+
+<div class="card" onclick="openPopup(
+'Bass Elektrik',
+'https://images.unsplash.com/photo-1616627989982-1db5c59f9b2b',
+'Bass elektrik dengan low end solid dan stabil, sangat cocok untuk latihan, recording, maupun tampil di panggung.'
+)">
+<img src="https://images.unsplash.com/photo-1616627989982-1db5c59f9b2b">
+<h3>Bass Elektrik</h3>
 <p class="price">Mulai Rp 1.500.000</p>
-<p>Low end kuat & stabil</p>
+<p>Klik untuk detail produk</p>
 </div>
-<div class="card">
-<h3>Aksesoris</h3>
-<p class="price">Lengkap</p>
-<p>Senar, capo, strap, tuner</p>
-</div>
+
 </div>
 </section>
 
-<section id="artikel">
-<h2>Berita & Artikel</h2>
+<section id="galeri">
+<h2>Galeri & Aktivitas</h2>
+<div class="grid">
+<img class="card" src="https://images.unsplash.com/photo-1485579149621-3123dd979885">
+<img class="card" src="https://images.unsplash.com/photo-1507838153414-b4b713384a76">
+<img class="card" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81">
+</div>
+</section>
+
+<section id="edukasi">
+<h2>Artikel & Edukasi Musik</h2>
 <div class="grid">
 <div class="card">
-<h3>Tips Memilih Gitar Pemula</h3>
-<p>Jangan salah beli gitar pertama.</p>
+<h3>Tips Memilih Gitar Pertama</h3>
+<p>
+Memilih gitar pertama adalah langkah besar.
+Kami membahas ukuran, jenis senar,
+dan kesalahan yang sering dilakukan pemula.
+</p>
 </div>
 <div class="card">
-<h3>Perawatan Gitar Agar Awet</h3>
-<p>Suara tetap stabil & jernih.</p>
+<h3>Perawatan Gitar Agar Tahan Lama</h3>
+<p>
+Perawatan sederhana namun konsisten
+akan membuat gitar tetap stabil dan nyaman dimainkan bertahun-tahun.
+</p>
 </div>
 </div>
 </section>
@@ -157,36 +228,76 @@ footer{
 <section id="testimoni">
 <h2>Testimoni Pelanggan</h2>
 <div class="grid">
-<div class="card">⭐⭐⭐⭐⭐<br>“Packing rapi & aman.”</div>
-<div class="card">⭐⭐⭐⭐⭐<br>“CS cepat & ramah.”</div>
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>
+“Saya beli gitar tanpa ragu.
+Penjualnya paham musik dan tidak asal jual.”
+</p>
+</div>
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>
+“Packing aman, respon cepat,
+dan barang sesuai ekspektasi.”
+</p>
+</div>
 </div>
 </section>
 
-<section id="faq">
-<h2>FAQ</h2>
-<details>
-<summary>Apakah produk original?</summary>
-<p>Ya, semua produk 100% original.</p>
-</details>
-<details>
-<summary>Bisa kirim ke seluruh Indonesia?</summary>
-<p>Bisa, pengiriman aman & bergaransi.</p>
-</details>
-</section>
-
 <section id="kontak">
-<h2>Kontak & Lokasi</h2>
+<h2>Kontak & Pemesanan</h2>
 <div class="card">
+<p>
+Ingin tanya dulu sebelum beli?  
+Kami sangat terbuka untuk konsultasi.
+Klik WhatsApp dan jelaskan kebutuhan musik kamu.
+</p>
 <p>📞 WhatsApp: 08xxxxxxxxxx</p>
 <p>📍 Indonesia</p>
 </div>
 </section>
 
 <footer>
-<p>© 2026 AP Gitar Musik</p>
+<p>© 2026 AP Gitar Musik — Toko Gitar & Alat Musik Profesional</p>
 </footer>
 
 <a class="wa" href="https://wa.me/628xxxxxxxxxx" target="_blank">WA</a>
+
+<!-- POPUP -->
+<div id="popup">
+<div class="box">
+<span class="close" onclick="closePopup()">✖</span>
+<h3 id="pTitle"></h3>
+<img id="pImg">
+<p id="pDesc"></p>
+<a id="pWa" class="btn" target="_blank">Pesan via WhatsApp</a>
+</div>
+</div>
+
+<script>
+/* ANIMASI SCROLL */
+const cards=document.querySelectorAll('.card');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting)x.target.classList.add('show');
+  });
+},{threshold:.2});
+cards.forEach(c=>obs.observe(c));
+
+/* POPUP */
+function openPopup(title,img,desc){
+  document.getElementById('pTitle').innerText=title;
+  document.getElementById('pImg').src=img;
+  document.getElementById('pDesc').innerText=desc;
+  document.getElementById('pWa').href=
+  'https://wa.me/628xxxxxxxxxx?text=Saya%20tertarik%20dengan%20'+title;
+  document.getElementById('popup').style.display='flex';
+}
+function closePopup(){
+  document.getElementById('popup').style.display='none';
+}
+</script>
 
 </body>
 </html>
