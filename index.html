@@ -1,302 +1,244 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AP Gitar Musik | Toko Gitar Profesional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Gitar Musik | Toko Alat Musik Profesional</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Segoe UI',sans-serif;
-  line-height:1.7;
-  background:#020617;
-  color:#0f172a;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
 
-/* GLOBAL */
-section{padding:90px 20px}
-.container{max-width:1150px;margin:auto}
-h1,h2{letter-spacing:.5px}
-h2{text-align:center;font-size:2.4rem;margin-bottom:25px}
-p{margin-bottom:15px}
+    body {
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.7;
+    }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(2,6,23,.85),rgba(2,6,23,.85)),
-    url("img/hero.jpg") center/cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
-}
-.hero h1{font-size:3.2rem;margin-bottom:25px}
-.hero p{max-width:900px;margin:auto;color:#e5e7eb;font-size:1.15rem}
-.hero a{
-  display:inline-block;
-  margin-top:35px;
-  padding:16px 36px;
-  background:linear-gradient(135deg,#22c55e,#16a34a);
-  color:#fff;
-  text-decoration:none;
-  border-radius:50px;
-  font-weight:bold;
-  box-shadow:0 25px 60px rgba(0,0,0,.5);
-}
+    header {
+      padding: 90px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #141e30, #243b55);
+    }
 
-/* ABOUT */
-.about{
-  background:linear-gradient(180deg,#f8fafc,#e2e8f0);
-}
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
 
-/* PRODUK */
-.produk{
-  background:linear-gradient(180deg,#ffffff,#f1f5f9);
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  margin-top:50px;
-}
-.card{
-  background:linear-gradient(180deg,#ffffff,#f8fafc);
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 30px 60px rgba(0,0,0,.18);
-  transition:.3s;
-}
-.card:hover{transform:translateY(-10px)}
-.card img{width:100%;height:220px;object-fit:cover}
-.card .c{padding:25px}
-.card h3{margin-bottom:10px}
-.card strong{display:block;margin-top:10px}
-.card a{
-  display:block;
-  margin-top:18px;
-  text-align:center;
-  padding:12px;
-  background:#020617;
-  color:#fff;
-  text-decoration:none;
-  border-radius:12px;
-}
+    header p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
 
-/* GALERI */
-.galeri{
-  background:linear-gradient(135deg,#020617,#020617);
-  color:#fff;
-}
-.galeri img{
-  width:100%;
-  border-radius:18px;
-  box-shadow:0 25px 45px rgba(0,0,0,.7);
-}
+    section {
+      padding: 80px 20px;
+    }
 
-/* TESTIMONI */
-.testimoni{
-  background:linear-gradient(180deg,#f1f5f9,#ffffff);
-}
-.testi-box{
-  max-width:900px;
-  margin:auto;
-  background:linear-gradient(135deg,#ffffff,#f8fafc);
-  padding:40px;
-  border-radius:25px;
-  box-shadow:0 35px 70px rgba(0,0,0,.25);
-}
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
 
-/* FAQ */
-.faq{
-  background:linear-gradient(180deg,#020617,#020617);
-  color:#fff;
-}
-.faq details{
-  max-width:850px;
-  margin:18px auto;
-  padding:18px 25px;
-  background:rgba(255,255,255,.08);
-  border-radius:14px;
-}
+    h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+    }
 
-/* CTA */
-.cta{
-  background:
-    linear-gradient(rgba(2,6,23,.85),rgba(2,6,23,.85)),
-    url("img/hero.jpg") center/cover;
-  color:#fff;
-  text-align:center;
-}
+    .desc {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 60px;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
 
-/* FOOTER */
-footer{
-  background:#020617;
-  color:#94a3b8;
-  text-align:center;
-  padding:50px 20px;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-@media(max-width:600px){
-  .hero h1{font-size:2.3rem}
-}
-</style>
+    .card {
+      background: linear-gradient(180deg, #1c1c1c, #2a2a2a);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 25px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #ffcc70;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      background: linear-gradient(135deg, #ff8c00, #ffb347);
+      color: #000;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #232526, #414345);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h2 {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>AP Gitar Musik</h1>
-    <p>
-    AP Gitar Musik adalah toko gitar online yang berkomitmen menghadirkan alat musik berkualitas
-    dengan standar kenyamanan bermain dan suara yang layak digunakan dalam jangka panjang.
-    Kami percaya gitar bukan sekadar barang, tetapi bagian dari perjalanan bermusik setiap orang.
+<header>
+  <h1>AP Gitar Musik</h1>
+  <p>
+    AP Gitar Musik adalah toko alat musik online terpercaya yang menyediakan berbagai
+    pilihan gitar, alat musik perkusi, dan instrumen religi dengan kualitas terbaik.
+    Kami hadir untuk musisi pemula hingga profesional yang mengutamakan suara jernih,
+    bahan kuat, dan pelayanan ramah.
+  </p>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Produk Unggulan Kami</h2>
+    <p class="desc">
+      Kami menyediakan berbagai alat musik pilihan yang telah melalui proses seleksi
+      kualitas. Setiap produk dirancang untuk menghasilkan karakter suara terbaik,
+      nyaman dimainkan, dan tahan lama untuk pemakaian jangka panjang.
     </p>
-    <a href="https://wa.me/62XXXXXXXXXX">Chat & Konsultasi via WhatsApp</a>
+
+    <div class="grid">
+
+      <!-- GITAR -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1">
+        <div class="content">
+          <h3>Gitar Akustik & Elektrik</h3>
+          <p>
+            Gitar dengan karakter suara seimbang dan desain elegan.
+            Cocok untuk latihan, manggung, rekaman studio, hingga koleksi pribadi.
+          </p>
+          <a class="btn" href="https://wa.me/6281234567890?text=Halo%20AP%20Gitar%20Musik,%20saya%20ingin%20tanya%20gitar">Chat WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- CAJON -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605733513597-a8f8341084f6">
+        <div class="content">
+          <h3>Cajon / Kahon</h3>
+          <p>
+            Cajon berkualitas dengan bass dalam dan slap tajam.
+            Cocok untuk akustikan, ibadah, komunitas musik, dan kafe.
+          </p>
+          <a class="btn" href="https://wa.me/6281234567890?text=Halo%20AP%20Gitar%20Musik,%20saya%20tertarik%20cajon">Chat WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- BASS -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19">
+        <div class="content">
+          <h3>Bass Gitar</h3>
+          <p>
+            Bass gitar dengan low frequency kuat dan stabil,
+            ideal untuk genre pop, jazz, rock, hingga religi.
+          </p>
+          <a class="btn" href="https://wa.me/6281234567890?text=Halo%20AP%20Gitar%20Musik,%20saya%20ingin%20info%20bass">Chat WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- DARBUKA -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1622482181992-4c33c7e06d1c">
+        <div class="content">
+          <h3>Darbuka</h3>
+          <p>
+            Darbuka dengan suara tajam dan responsif,
+            cocok untuk musik Timur Tengah dan islami.
+          </p>
+          <a class="btn" href="https://wa.me/6281234567890?text=Halo%20AP%20Gitar%20Musik,%20saya%20ingin%20tanya%20darbuka">Chat WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- HADROH -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed">
+        <div class="content">
+          <h3>Alat Musik Hadroh</h3>
+          <p>
+            Hadroh berkualitas untuk majelis sholawat, pesantren,
+            dan kegiatan keagamaan dengan suara hangat dan solid.
+          </p>
+          <a class="btn" href="https://wa.me/6281234567890?text=Halo%20AP%20Gitar%20Musik,%20saya%20ingin%20tanya%20hadroh">Chat WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about">
-<div class="container">
-<h2>Tentang AP Gitar Musik</h2>
-<p>
-AP Gitar Musik hadir untuk membantu siapa saja mendapatkan gitar yang benar-benar sesuai
-dengan kebutuhan, bukan sekadar murah tapi mengecewakan.
-Setiap produk yang kami jual telah melalui proses pengecekan fisik, kenyamanan senar,
-serta kestabilan tuning.
-</p>
-<p>
-Kami mengutamakan kejujuran, pelayanan yang jelas, dan pengiriman aman ke seluruh Indonesia.
-Bagi kami, kepuasan pelanggan adalah prioritas jangka panjang.
-</p>
-</div>
 </section>
 
-<!-- PRODUK -->
-<section class="produk">
-<div class="container">
-<h2>Produk & Layanan</h2>
-
-<div class="grid">
-<div class="card">
-<img src="img/gitar-akustik.jpg">
-<div class="c">
-<h3>Gitar Akustik</h3>
-<p>
-Suara hangat dan natural, nyaman dimainkan untuk pemula hingga musisi berpengalaman.
-Setup senar dibuat ramah jari dan siap dimainkan sejak pertama kali diterima.
-</p>
-<strong>Mulai Rp 500.000</strong>
-<a href="#">Pesan Sekarang</a>
-</div>
-</div>
-
-<div class="card">
-<img src="img/gitar-elektrik.jpg">
-<div class="c">
-<h3>Gitar Elektrik</h3>
-<p>
-Karakter suara kuat dan responsif untuk berbagai genre.
-Cocok untuk latihan panjang, recording, maupun tampil di panggung.
-</p>
-<strong>Mulai Rp 1.200.000</strong>
-<a href="#">Pesan Sekarang</a>
-</div>
-</div>
-
-<div class="card">
-<img src="img/bass.jpg">
-<div class="c">
-<h3>Bass Gitar</h3>
-<p>
-Low yang tebal dan stabil, ideal untuk band, gereja, dan studio rekaman.
-Konstruksi kokoh dan nyaman dimainkan.
-</p>
-<strong>Mulai Rp 1.500.000</strong>
-<a href="#">Pesan Sekarang</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- GALERI -->
-<section class="galeri">
-<div class="container">
-<h2>Galeri Produk</h2>
-<p style="text-align:center;color:#cbd5f5;max-width:850px;margin:auto">
-Foto produk asli yang kami kirim ke pelanggan.
-Tanpa edit berlebihan sebagai bentuk transparansi dan kejujuran.
-</p>
-
-<div class="grid" style="margin-top:40px">
-<img src="img/galeri1.jpg">
-<img src="img/galeri2.jpg">
-<img src="img/galeri3.jpg">
-</div>
-</div>
-</section>
-
-<!-- TESTIMONI -->
-<section class="testimoni">
-<div class="container">
-<h2>Testimoni Pelanggan</h2>
-<div class="testi-box">
-<p>
-Banyak pelanggan awalnya ragu membeli gitar secara online,
-namun setelah berbelanja di AP Gitar Musik mereka merasakan sendiri
-kualitas produk, pelayanan yang jujur, serta pengiriman yang aman.
-</p>
-<strong>— Pelanggan AP Gitar Musik</strong>
-</div>
-</div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-<div class="container">
-<h2>Pertanyaan Umum</h2>
-
-<details>
-<summary>Apakah produknya original?</summary>
-<p>
-Ya. Semua produk dicek sebelum dikirim dan dijamin sesuai deskripsi.
-</p>
-</details>
-
-<details>
-<summary>Apakah pengiriman aman?</summary>
-<p>
-Kami menggunakan packing berlapis untuk menjaga gitar tetap aman sampai tujuan.
-</p>
-</details>
-</div>
-</section>
-
-<!-- CTA -->
 <section class="cta">
-<div class="container">
-<h2>Masih Bingung Pilih Gitar?</h2>
-<p>
-Daripada salah beli dan menyesal, lebih baik konsultasi GRATIS dengan kami.
-Kami bantu rekomendasikan gitar sesuai kebutuhan dan budget,
-tanpa paksaan dan tanpa tipu-tipu.
-</p>
-<a href="https://wa.me/62XXXXXXXXXX">Chat WhatsApp Sekarang</a>
-</div>
+  <h2>Konsultasi Gratis Sebelum Membeli</h2>
+  <p class="desc">
+    Bingung memilih alat musik yang sesuai kebutuhan?
+    Tim AP Gitar Musik siap membantu kamu menemukan pilihan terbaik.
+  </p>
+  <a class="btn" href="https://wa.me/6281234567890?text=Halo%20AP%20Gitar%20Musik,%20saya%20ingin%20konsultasi">Hubungi WhatsApp</a>
 </section>
 
 <footer>
-<p>
-AP Gitar Musik — Partner Bermusik Anda  
-Kualitas • Kejujuran • Pengiriman Aman
-</p>
-<p>© 2026 AP Gitar Musik</p>
+  © 2025 AP Gitar Musik • Toko Alat Musik Profesional
 </footer>
 
 </body>
